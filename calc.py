@@ -7,8 +7,15 @@ e = Entry(root, width=35, borderwidth=5)
 e.grid(row=0, column=0, columnspan=3, padx=10, pady=10)
 
 def buttonClick(number):
+    current = e.get()
     e.delete(0, END)
-    e.insert(0, number)
+    e.insert(0, str(current) + str (number))
+    
+def buttonClear ():
+    e.delete(0, END)
+    
+def buttonPlus():
+    return
 
 #define the buttons
 
@@ -23,10 +30,10 @@ Button8=Button(root, text="8", padx=40, pady=20, command=lambda: buttonClick(8))
 Button9=Button(root, text="9", padx=40, pady=20, command=lambda: buttonClick(9))
 Button0=Button(root, text="0", padx=40, pady=20, command=lambda: buttonClick(0))
 
-ButtonPlus=Button(root, text="+", padx=40, pady=20, command=lambda: buttonClick())
+ButtonPlus=Button(root, text="+", padx=40, pady=20, command=lambda: buttonPlus())
 ButtonSubstract=Button(root, text="-", padx=41, pady=20, command=lambda: buttonClick())
 ButtonEquals=Button(root, text="=", padx=40, pady=20, command=lambda: buttonClick())
-ButtonClear=Button(root, text="clear", padx=78, pady=20, command=lambda: buttonClick())
+ButtonClear=Button(root, text="clear", padx=78, pady=20, command=buttonClear)
 
 
 #Place buttons on the screen
