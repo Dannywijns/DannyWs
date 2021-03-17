@@ -15,7 +15,16 @@ def buttonClear ():
     e.delete(0, END)
     
 def buttonPlus():
-    return
+    firstNum= e.get()
+    global fNum 
+    fNum = int(firstNum)
+    e.delete(0, END)
+
+def buttonEquals():
+    secondNum = e.get()
+    e.delete(0, END)
+    e.insert(0,fNum + int(secondNum))
+    
 
 #define the buttons
 
@@ -30,9 +39,9 @@ Button8=Button(root, text="8", padx=40, pady=20, command=lambda: buttonClick(8))
 Button9=Button(root, text="9", padx=40, pady=20, command=lambda: buttonClick(9))
 Button0=Button(root, text="0", padx=40, pady=20, command=lambda: buttonClick(0))
 
-ButtonPlus=Button(root, text="+", padx=40, pady=20, command=lambda: buttonPlus())
+ButtonPlus=Button(root, text="+", padx=40, pady=20, command=buttonPlus)
 ButtonSubstract=Button(root, text="-", padx=41, pady=20, command=lambda: buttonClick())
-ButtonEquals=Button(root, text="=", padx=40, pady=20, command=lambda: buttonClick())
+ButtonEquals=Button(root, text="=", padx=40, pady=20, command=buttonEquals)
 ButtonClear=Button(root, text="clear", padx=78, pady=20, command=buttonClear)
 
 
